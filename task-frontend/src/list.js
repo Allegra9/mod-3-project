@@ -12,12 +12,12 @@ lastListId()
     let newListName = document.getElementById('new-list-title').value
     document.getElementById('all-lists').innerHTML += `
       <div id="list-${lastId}">
+        <input class="check-list" id="check-list" type="checkbox">
         <span id="list-name">${newListName}</span>
-        <div id="list-button-container">
-          <button class="delete-list fas fa-times"></button>
+        <span id="list-button-container">
           <button class="edit-list fas fa-edit"></button>
-          <button class="fas fa-plus"></button>
-        </div>
+          <button class="delete-list fas fa-times"></button>
+        </span>
         <ul class="tasks" id="tasks">
         </ul>
       </div>`
@@ -34,8 +34,8 @@ lastListId()
   // Show edit list item form
   else if (e.target.className.includes("edit-list")) {
     let listItemId = parseInt(e.target.parentNode.parentNode.id.substring(5))
-    let listName = e.target.parentNode.parentNode.children[0].innerText
-    e.target.parentNode.parentNode.children[0].innerHTML = `
+    let listName = e.target.parentNode.parentNode.children[1].innerText
+    e.target.parentNode.parentNode.children[1].innerHTML = `
     <form id="edit-list-form">
       <input required type="text" id="edit-list-name" value=${listName}>
       <button type="submit" id="submit-edit" class="fas fa-check"></button>
@@ -49,7 +49,7 @@ lastListId()
     let listItemId = parseInt(listParent.id.substring(5))
     e.preventDefault()
     let editedValue = listParent.querySelector('#edit-list-name').value
-    listParent.children[0].innerText = `${editedValue}`
+    listParent.children[1].innerText = `${editedValue}`
     Adapter.editList(listItemId, {name: editedValue})
   }
 
@@ -61,7 +61,7 @@ lastListId()
     let listItemId = parseInt(listParent.id.substring(5))
     let value = e.target.parentNode.children[0].value
     console.log(value)
-    listParent.children[0].innerText = value
+    listParent.children[1].innerText = value
   }
 
   // Toggle checked list item names
