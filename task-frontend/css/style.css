@@ -1,3 +1,21 @@
 .list-button-container {
   display: inline-block;
 }
+
+.timeDate {
+    display: block;
+    width: 100%;
+    padding-bottom: 2%;
+    margin-top: 5%;
+    color: #fff;
+   /* border: 3px solid black; */
+}
+
+/*time styling:*/
+#time {
+     color: #fff;
+     margin-top: 10%;
+     display: block;
+     font-size: 11em;
+     font-weight: 500;
+}
