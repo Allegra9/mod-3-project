@@ -21,6 +21,7 @@ lastListId()
         <ul class="tasks" id="tasks">
         </ul>
       </div>`
+      document.getElementById('new-list-title').value = ""
     Adapter.createList({name:newListName})
   }
 

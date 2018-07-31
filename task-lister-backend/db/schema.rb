@@ -22,14 +22,4 @@ ActiveRecord::Schema.define(version: 2018_07_30_140515) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tasks", force: :cascade do |t|
-    t.string "description"
-    t.string "priority"
-    t.datetime "to_be_completed_by"
-    t.string "status"
-    t.integer "list_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end
