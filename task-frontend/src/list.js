@@ -71,12 +71,12 @@ function renderLists(data) {
   for (let listItem of data) {
     document.getElementById('all-lists').innerHTML += `
       <div id="list-${listItem.id}">
+        <button class="check-list fas fa-check"></button>
         <span id="list-name">${listItem.name}</span>
-        <div id="list-button-container">
-          <button class="delete-list fas fa-check"></button>
+        <span id="list-button-container">
           <button class="edit-list fas fa-edit"></button>
           <button class="delete-list fas fa-times"></button>
-        </div>
+        </span>
       </div>`
   }
 }
