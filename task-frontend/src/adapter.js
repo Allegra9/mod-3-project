@@ -1,4 +1,4 @@
-const taskUrl = 'http://localhost:3000/api/v1/tasks'
+
 const listUrl = 'http://localhost:3000/api/v1/lists'
 
 class Adapter{
@@ -22,6 +22,8 @@ class Adapter{
       body: JSON.stringify(body),
       headers:{'Content-type':'application/json'}
     })
+    .then(res => res.json())
+    .then(data => console.log(data))
 
   }
 

@@ -64,20 +64,58 @@ lastListId()
     listParent.children[0].innerText = value
   }
 
-});
+  // Toggle checked list item names
+  else if (e.target.id === "check-list") {
+    let sibling = e.target.parentNode.children[1]
+    let listItemId = parseInt(e.target.parentNode.id.substring(5))
+    if (sibling.style.textDecoration === "line-through"){
+      console.log(sibling)
+      console.log(e.target)
 
+      sibling.style.textDecoration = "none"
+      !e.target.checked
+      Adapter.editList(listItemId,{checked: "false"})
+    }
+    else {
+      console.log(sibling)
+      sibling.style.textDecoration = "line-through"
+      console.log(e.target)
+      e.target.checked
+      Adapter.editList(listItemId,{checked: "true"})
+    }
+  }
+
+});
+// <button class="check-list fas fa-check" id="check-list"></button>
 function renderLists(data) {
   document.getElementById('all-lists').innerHTML = ""
   for (let listItem of data) {
+
+    let listName = document.createElement('span')
+    let checkbox = document.createElement('input')
+
+    checkbox.className = "check-list"
+    checkbox.id = "check-list"
+    checkbox.type = "checkbox"
+
+    listName.innerText = listItem.name
+    listName.id = "list-name"
+
+    if (listItem.checked === "true") {
+      listName.style.textDecoration = "line-through"
+      checkbox.checked = true
+    }
+
     document.getElementById('all-lists').innerHTML += `
       <div id="list-${listItem.id}">
-        <button class="check-list fas fa-check"></button>
-        <span id="list-name">${listItem.name}</span>
         <span id="list-button-container">
           <button class="edit-list fas fa-edit"></button>
           <button class="delete-list fas fa-times"></button>
         </span>
       </div>`
+
+    document.getElementById(`list-${listItem.id}`).prepend(checkbox, listName)
+
   }
 }
 

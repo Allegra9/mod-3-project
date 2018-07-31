@@ -46,6 +46,6 @@ class Api::V1::ListsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def list_params
-      params.require(:list).permit(:name)
+      params.require(:list).permit(:name, :checked)
     end
 end
