@@ -14,7 +14,7 @@ function renderGalleryItem(randomNumber){
       document.body.style.backgroundImage = `url(${response.url})`;
 
       document.body.style.backgroundRepeat = "no-repeat"
-      document.body.style.backgroundPosition = "top center"
+      document.body.style.backgroundPosition = "center center"
       document.body.style.backgroundSize = "cover"
     })
   }

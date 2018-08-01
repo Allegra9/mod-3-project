@@ -117,7 +117,7 @@ function renderLists(data) {
       <div id="list-${listItem.id}">
         <input class="check-list" type="checkbox" ${listItem.checked === "true" && "checked"}>
         <span id="list-name" ${listItem.checked === "true" && 'style="text-decoration:line-through; color:grey;"'}>${listItem.name}</span>
-        <span id="list-button-container">
+        <span id="list-button-container" style="float:right;">
           <button class="edit-list fas fa-edit" style="background:transparent; border:none" title="edit"></button>
           <button class="delete-list fas fa-times" style="background:transparent; border:none" title="delete"></button>
         </span>
