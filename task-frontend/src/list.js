@@ -1,14 +1,22 @@
 let lastId
-
-document.addEventListener('DOMContentLoaded', function () {
-  Adapter.getLists()
-})
+let toggleList = false
 
 document.getElementById("lists").addEventListener("click", function(e) {
 lastListId()
 
+  // show all lists
+  if (e.target.id === 'show-all-lists') {
+    if (toggleList === false){
+      toggleList = true
+      Adapter.getLists()
+    }
+    else{
+      toggleList = false
+      document.getElementById('all-lists').innerHTML = ""
+    }
+  }
   // Create new list item
-  if (e.target.id === 'add-list-item') {
+  else if (e.target.id === 'add-list-item') {
     e.preventDefault()
     let newListName = document.getElementById('new-list-title').value
     document.getElementById('all-lists').innerHTML += `

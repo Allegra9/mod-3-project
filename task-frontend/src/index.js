@@ -60,3 +60,5 @@ function checkDayTime(i){
     greeting.innerHTML = "Sleep is so important. Why u here?"
   }
 }
+
+// Get Location
