@@ -35,7 +35,7 @@ class Adapter{
   }
 
   static createList(body) {
-    fetch(`${listUrl}`,{
+    fetch(listUrl,{
       method: 'POST',
       body: JSON.stringify(body),
       headers:{'Content-type':'application/json'}

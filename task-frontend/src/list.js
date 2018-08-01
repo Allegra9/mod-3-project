@@ -71,14 +71,14 @@ lastListId()
     let listItemId = parseInt(e.target.parentNode.id.substring(5))
     if (sibling.style.textDecoration === "line-through"){
       console.log(sibling)
-      console.log(e.target)
+      console.log(listItemId)
 
       sibling.style.textDecoration = "none"
       !e.target.checked
       Adapter.editList(listItemId,{checked: "false"})
     }
     else {
-      console.log(sibling)
+      console.log(listItemId)
       sibling.style.textDecoration = "line-through"
       console.log(e.target)
       e.target.checked
@@ -87,7 +87,6 @@ lastListId()
   }
 
 });
-// <button class="check-list fas fa-check" id="check-list"></button>
 function renderLists(data) {
   document.getElementById('all-lists').innerHTML = ""
   for (let listItem of data) {

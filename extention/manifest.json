@@ -1,0 +1,16 @@
+{
+    "name": "mod-3-project",
+    "version": "1.0",
+    "browser_action": {
+      "default_icon": "#",
+      "default_popup": "popup.html"
+    },
+    "permissions": [],
+    "description": "Build an Extension!",
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [],
+    "manifest_version": 2
+  }
