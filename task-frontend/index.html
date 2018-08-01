@@ -12,33 +12,32 @@
   <div class="container text-center">
   <div class="row">
 
-    <div id="greeting">
-    </div>
-
     <div class="timeDate">
       <div id="time"></div>
     </div>
 
+    <div id="greeting">
+    </div>
+
     <div id="main-content">
-      <h1>gratitude list</h1>
+      <h1>Todo:</h1>
       <div id="lists">
-        <button type="button" name="button" id="show-all-lists">little great things:</button>
+        <!-- <button type="button" name="button" id="show-all-lists">little great things:</button> -->
         <form id="create-list-form" method="post">
-         <input required type="text" id="new-list-title" name="new-list-title" placeholder="|">
+         <input required type="text" id="new-list-title" name="new-list-title" placeholder="">
          <button type="submit" class="add-list-item fas fa-plus" id='add-list-item'></button>
         </form>
         <div class="all-lists" id="all-lists">
         </div>
       </div>
+    </div><!-- #main-content -->
 
       </div>
-    </div>
+  </div><!--container-->
 
       <script src="src/index.js"></script>
       <script src="src/adapter.js"></script>
       <script src="src/task.js"></script>
       <script src="src/list.js"></script>
-    </div><!-- #main-content -->
-
   </body>
 </html>

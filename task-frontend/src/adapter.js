@@ -31,7 +31,6 @@ class Adapter{
     fetch(`${listUrl}/${id}`, {
       method: 'DELETE'
     })
-    .then(alert("Category deleted"))
   }
 
   static createList(body) {
@@ -40,7 +39,6 @@ class Adapter{
       body: JSON.stringify(body),
       headers:{'Content-type':'application/json'}
     })
-    .then(alert("New list created"))
   }
 
 }
