@@ -1,13 +1,14 @@
 let lastId
+
+document.addEventListener('DOMContentLoaded', function () {
+  Adapter.getLists()
+})
+
 document.getElementById("lists").addEventListener("click", function(e) {
 lastListId()
-  // Render all list items
-  if (e.target.id === 'show-all-lists') {
-    Adapter.getLists()
-  }
 
   // Create new list item
-  else if (e.target.id === 'add-list-item') {
+  if (e.target.id === 'add-list-item') {
     e.preventDefault()
     let newListName = document.getElementById('new-list-title').value
     document.getElementById('all-lists').innerHTML += `
