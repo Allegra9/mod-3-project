@@ -91,3 +91,7 @@ body {
 #new-list-title:focus {
   outline:0 !important;
 }
+
+.location  {
+  width = 100px;
+}

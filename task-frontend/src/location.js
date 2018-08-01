@@ -1,48 +1,86 @@
-//Get the latitude and the longitude;
-function successFunction(position) {
-    var lat = position.coords.latitude;
-    var lng = position.coords.longitude;
-    codeLatLng(lat, lng)
+let locationContainer = document.getElementById("location")
+const destinations = [["Mexico","mx"],["Malaga","mala"], ["Lisbon","lisb"], ["Verona","vero"],
+["Marseille", "mars"], ["Los Angeles","laxa"], ["Melbourne","mela"]]
+
+const travelUrl = `https://www.skyscanner.net/transport/flights/lond`
+document.addEventListener('DOMContentLoaded', changeLocation)
+
+function changeLocation() {
+  setInterval(setLocation, 5000);
 }
 
-function errorFunction(){
-    alert("Geocoder failed");
+function setLocation() {
+  let rand = destinations[Math.floor(Math.random()*destinations.length)];
+  locationContainer.innerHTML = `<a class="location-name" target="_blank" href=${travelUrl}/${rand[1]}>${rand[0]}</a>`
+  getWeather(rand)
 }
 
-  function initialize() {
-    geocoder = new google.maps.Geocoder();
-  }
+function getWeather(location) {
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${location[0]}&APPID=55219e014878a0eda0e90952b079527d`
+  console.log(url)
+  fetch(url)
+  .then(res => res.json())
+  .then(data => renderWeather(data))
+}
 
-  function codeLatLng(lat, lng) {
-
-    var latlng = new google.maps.LatLng(lat, lng);
-    geocoder.geocode({'latLng': latlng}, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-      console.log(results)
-        if (results[1]) {
-         //formatted address
-         alert(results[0].formatted_address)
-        //find country name
-             for (var i=0; i<results[0].address_components.length; i++) {
-            for (var b=0;b<results[0].address_components[i].types.length;b++) {
-
-            //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
-                if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
-                    //this is the object you are looking for
-                    city= results[0].address_components[i];
-                    break;
-                }
-            }
-        }
-        //city data
-        alert(city.short_name + " " + city.long_name)
+function renderWeather(data) {
+  let temp = (data.main.temp - 273.15).toFixed(1)
+  let h3 = document.createElement('h3')
+  h3.innerText = `${temp} °C`
+  locationContainer.prepend(h3)
+}
 
 
-        } else {
-          alert("No results found");
-        }
-      } else {
-        alert("Geocoder failed due to: " + status);
-      }
-    });
-  }
+// `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=40.712784,-74.005941&rankby=distance&type=airport&key=<Your API Key>`
+// //
+// // `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=40.712784,-74.005941&radius=50000&type=airport&key=<Your API Key>`
+//
+// let lat, lng
+// let  options = {
+//   enableHighAccuracy: true,
+//   timeout: 5000,
+//   maximumAge: 0
+// };
+//
+// function success(pos) {
+//   var crd = pos.coords;
+//
+//   console.log('Your current position is:');
+//   console.log(`Latitude : ${crd.latitude}`);
+//   console.log(`Longitude: ${crd.longitude}`);
+//   console.log(`More or less ${crd.accuracy} meters.`);
+// }
+//
+// function error(err) {
+//   console.warn(`ERROR(${err.code}): ${err.message}`);
+// }
+//
+// navigator.geolocation.getCurrentPosition(success, error);
+
+// function getLocation() {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(showPosition);
+//     } else {
+//         console.log("Geolocation is not supported by this browser.")
+//     }
+// }
+//
+// function showPosition(position) {
+//     lat = position.coords.latitude
+//     lng = position.coords.longitude
+//     getNearestAirport(lat,lng)
+// }
+// getLocation()
+//
+// // These code snippets use an open-source library. http://unirest.io/nodejs
+//
+//
+// function getNearestAirport (lat, lng) {
+//   url = `https://cometari-airportsfinder-v1.p.mashape.com/api/airports/by-radius?lat=${lat}lng=${lng}&radius=50`
+//   fetch(url, {
+//     headers: {"X-Mashape-Key": "xriN3fhwD8msh12Xie8YSM9Wybmmp1KlB5Wjsne5z9RNt4ajwx",
+//     "Content-type": "application/json" }
+//   })
+//   .then(res => res.json())
+//   .then(data => console.log(data))
+// }
