@@ -3,17 +3,17 @@ body {
 }
 
 #main-content {
-  margin:5px;
+  margin: 10px;
   color: white;
 }
 
 button {
-  background-color: Transparent;
-   background-repeat:no-repeat;
+   background-color: transparent;
+   background-repeat: no-repeat;
    border: none;
-   cursor:pointer;
+   cursor: pointer;
    overflow: hidden;
-   outline:none;
+   outline: none;
    color: white;
 }
 
