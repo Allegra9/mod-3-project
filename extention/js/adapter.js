@@ -6,6 +6,7 @@ class Adapter{
     console.log("GetLists called")
     fetch('http://localhost:3000/api/v1/lists')
     .then(res => res.json())
+    .then(data => data.sort((a, b) => a.id - b.id))
     .then(data => renderLists(data))
   }
 

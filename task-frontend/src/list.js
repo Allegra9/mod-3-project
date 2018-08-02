@@ -23,7 +23,7 @@ lastListId()
       <div id="list-${lastId}">
         <input class="check-list" type="checkbox">
         <span id="list-name">${newListName}</span>
-        <span id="list-button-container">
+        <span id="list-button-container" style="float:right;">
           <button class="edit-list fas fa-edit" style="background:transparent; border:none" title="edit"></button>
           <button class="delete-list fas fa-times" style="background:transparent; border:none" title="delete"></button>
         </span>

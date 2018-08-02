@@ -17,7 +17,7 @@ lastListId()
       <div id="list-${lastId}">
         <input class="check-list" id="check-list" type="checkbox">
         <span id="list-name">${newListName}</span>
-        <span id="list-button-container">
+        <span id="list-button-container" style="float:right;">
           <button class="edit-list fas fa-edit"></button>
           <button class="delete-list fas fa-times"></button>
         </span>
@@ -69,59 +69,47 @@ lastListId()
   }
 
   // Toggle checked list item names
-  else if (e.target.id === "check-list") {
+  else if (e.target.className === "check-list") {
     let sibling = e.target.parentNode.children[1]
+    console.log(sibling)
     let listItemId = parseInt(e.target.parentNode.id.substring(5))
-    if (sibling.style.textDecoration === "line-through"){
-      console.log(sibling)
-      console.log(listItemId)
+    console.log(listItemId)
 
+    if (sibling.style.textDecoration === "line-through"){
       sibling.style.textDecoration = "none"
+      sibling.style.color = "#fff"
       !e.target.checked
-      Adapter.editList(listItemId,{checked: "false"})
+      Adapter.editList(listItemId, {checked: "false"})
     }
     else {
       console.log(listItemId)
       sibling.style.textDecoration = "line-through"
+      sibling.style.color = "grey"       // added color
       console.log(e.target)
-      e.target.checked
+      e.target.checked = "true"
       Adapter.editList(listItemId,{checked: "true"})
     }
   }
+
 
 });
 function renderLists(data) {
   document.getElementById('all-lists').innerHTML = ""
   for (let listItem of data) {
 
-    let listName = document.createElement('span')
-    let checkbox = document.createElement('input')
-
-    checkbox.className = "check-list"
-    checkbox.id = "check-list"
-    checkbox.type = "checkbox"
-
-    listName.innerText = listItem.name
-    listName.id = "list-name"
-
-    if (listItem.checked === "true") {
-      listName.style.textDecoration = "line-through"
-      checkbox.checked = true
-    }
-
     document.getElementById('all-lists').innerHTML += `
       <div id="list-${listItem.id}">
-        <span id="list-button-container">
-          <button class="edit-list fas fa-edit"></button>
-          <button class="delete-list fas fa-times"></button>
+        <input class="check-list" type="checkbox" ${listItem.checked === "true" && "checked"}>
+        <span id="list-name" ${listItem.checked === "true" && 'style="text-decoration:line-through; color:lightgrey;"'}>${listItem.name}</span>
+        <span id="list-button-container" style="float:right;">
+          <button class="edit-list fas fa-edit" style="background:transparent; border:none" title="edit"></button>
+          <button class="delete-list fas fa-times" style="background:transparent; border:none" title="delete"></button>
         </span>
+        <ul class="tasks" id="tasks">
+        </ul>
       </div>`
-
-    document.getElementById(`list-${listItem.id}`).prepend(checkbox, listName)
-
   }
 }
-
 function setLastId(data) {
   lastId = data[data.length-1].id + 1
 }
