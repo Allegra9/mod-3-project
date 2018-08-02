@@ -1,3 +1,8 @@
+//adding service worker:
+if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('sw.js')
+}
+
 let locationContainer = document.getElementById("location")
 
 const destinations = [["Mexico","mx"],["Malaga","mala"], ["Lisbon","lisb"], ["Verona","vero"],
