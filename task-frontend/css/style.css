@@ -26,6 +26,7 @@ body, html {
     /* padding-bottom: 2%; */
     margin-top: 5%;
     color: #fff;
+    background: black;
    /* border: 3px solid black; */
 }
 
@@ -61,7 +62,7 @@ body, html {
   top: 80%;
   right: 0;
   bottom: 0;
-  left: 50%;
+  /* left: 50%; */
   width: 700px;
   height: 400px;
   /* border: 3px solid black; */
@@ -127,3 +128,31 @@ body, html {
   width = 100px;
 
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {...}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (max-width: 900px) {
+  #main-content {
+    left:auto;
+  }
+
+  #greeting {
+    left:auto;
+    height: min-content;
+  }
+
+  .timeDate {
+    font-size:4em;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {...}

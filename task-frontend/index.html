@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
   <title>Flatiron Task Lister</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
@@ -12,13 +13,14 @@
   </div>
   <div class="container text-center">
   <div class="row">
-
+    <div class="time-container">
     <div class="timeDate">
       <div id="time"></div>
     </div>
 
     <div id="greeting">
     </div>
+  </div>
 
     <div id="main-content">
       <h1>Todo:</h1>
@@ -26,7 +28,7 @@
         <button type="button" name="button" id="show-all-lists">little great things:</button>
         <form id="create-list-form" method="post">
          <input required type="text" id="new-list-title" name="new-list-title" placeholder="">
-         <!-- <button type="submit" class="add-list-item" id='add-list-item'></button> -->
+         <button type="submit" class="add-list-item" id='add-list-item'></button>
          <input type="submit" class="add-list-item" id='add-list-item'>
         </form>
         <div class="all-lists" id="all-lists">
