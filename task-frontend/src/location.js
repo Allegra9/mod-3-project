@@ -1,7 +1,4 @@
 //adding service worker:
-if (navigator.serviceWorker) {
-    navigator.serviceWorker.register('sw.js')
-}
 
 let locationContainer = document.getElementById("location")
 
