@@ -1,7 +1,4 @@
 //adding service worker:
-if (navigator.serviceWorker) {
-    navigator.serviceWorker.register('sw.js')
-}
 
 let locationContainer = document.getElementById("location")
 
@@ -12,7 +9,7 @@ const travelUrl = `https://www.skyscanner.net/transport/flights/lond`
 document.addEventListener('DOMContentLoaded', changeLocation)
 
 function changeLocation() {
-  setInterval(setLocation, 10000000000);
+  setInterval(setLocation, 5000);
 }
 
 function setLocation() {

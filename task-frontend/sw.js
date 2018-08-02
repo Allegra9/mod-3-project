@@ -4,6 +4,7 @@ const cacheName = "first"
 
 const filesToCache = [
   'index.html',
+  'src/notification.js'
   'src/index.js',
   'css/style.css',
   'src/adapter.js',
