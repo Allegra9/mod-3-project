@@ -10,6 +10,7 @@ const filesToCache = [
   'src/adapter.js',
   'src/list.js',
   'src/location.js',
+  'img/beach.jpg',
   '/'      //this path will work offline aka home page
 ]
 // key: value

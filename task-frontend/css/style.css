@@ -1,9 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body, html {
     height: 100%;
 }
+
+body {
+  background-image: url('/img/beach.jpg');
+}
+
 .ui-widget-content {
   background: transparent !important;
-  border: 0 !important;
+  /* background: rgba(0, 0, 0, 0.2) !important;
+  border: 0 !important; */
 }
 
 
@@ -29,9 +40,11 @@ body, html {
 #time {
      color: #fff;
      margin-top: 10%;
+     margin-bottom: -50px;
      display: block;
      font-size: 11em;
      font-weight: 500;
+    /* border: 3px solid black; */
 }
 
 #greeting {
@@ -60,7 +73,7 @@ body, html {
   left: 0;
   width: 350px;
   height: 350px;
-  box-shadow: 7px 15px 34px 10px rgba(0, 0, 0, 10.68), inset -3px -10px 15px 0.1px #89847e;
+  box-shadow: 7px 5px 34px 10px rgba(0, 0, 0, 0.4), inset -3px -5px 10px 0.1px #89847e;
   border-radius: 10px;
   cursor: pointer;
   z-index: 9;
@@ -72,8 +85,27 @@ body, html {
 }
 
 #show-all-lists {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: solid 2px #fff;
+  color: #fff;
+  cursor: pointer;
 }
+
+#show-all-lists:focus {
+  outline: none;
+}
+
+#show-all-lists:hover {
+  background-color: rgba(255,255,255,0.4);
+}
+
+#show-all-lists:active {
+  background-color: rgba(0,0,0,0.4);
+}
+
 
 #new-list-title {
    background: transparent !important;
@@ -150,31 +182,3 @@ body, html {
   color: #fff !important;
   text-decoration: none !important;
 }
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {...}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {...}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {...}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media (max-width: 900px) {
-  #main-content {
-    left:auto;
-  }
-
-  #greeting {
-    left:auto;
-    height: min-content;
-  }
-
-  .timeDate {
-    font-size:4em;
-  }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media (min-width: 1200px) {...}
