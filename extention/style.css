@@ -1,0 +1,26 @@
+body {
+  background: linear-gradient(#355C7D, #6C5B7B, #C06C84);
+}
+
+#main-content {
+  margin:5px;
+  color: white;
+}
+
+button {
+  background-color: Transparent;
+   background-repeat:no-repeat;
+   border: none;
+   cursor:pointer;
+   overflow: hidden;
+   outline:none;
+   color: white;
+}
+
+#new-list-title {
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+  outline:none;
+  color: white;
+}
