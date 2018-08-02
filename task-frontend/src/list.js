@@ -27,8 +27,6 @@ lastListId()
           <button class="edit-list fas fa-edit" style="background:transparent; border:none" title="edit"></button>
           <button class="delete-list fas fa-times" style="background:transparent; border:none" title="delete"></button>
         </span>
-        <ul class="tasks" id="tasks">
-        </ul>
       </div>`
 
       console.log(lastId)
@@ -121,8 +119,6 @@ function renderLists(data) {
           <button class="edit-list fas fa-edit" style="background:transparent; border:none" title="edit"></button>
           <button class="delete-list fas fa-times" style="background:transparent; border:none" title="delete"></button>
         </span>
-        <ul class="tasks" id="tasks">
-        </ul>
       </div>`
   }
 }
