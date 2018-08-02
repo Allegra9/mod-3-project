@@ -51,9 +51,16 @@ body {
   top: 80%;
   right: 0;
   bottom: 0;
-  left: 50%;
-  width: 700px;
-  height: 400px;
+  left: 0;
+  width: 350px;
+  height: 350px;
+  box-shadow: 7px 15px 34px 10px rgba(0, 0, 0, 10.68), inset -3px -10px 15px 0.1px #89847e;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 9;
+  padding-top: 5px;
+  overflow: hidden;
+  overflow-y: scroll;
   /* border: 3px solid black; */
 }
 
@@ -107,13 +114,31 @@ body {
   text-align: left;
   margin: 0;
   width: 400px;
-  margin-left: 38%;
+  margin-left: 33%;
 }
 
 #check-list {
   margin-right: 5px;
+}
 
-.location  {
-  width = 100px;
+#location {
+  width: 300px;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  font-size: 1.5em;
+  margin-left: 10px;
+  margin-top: 10px;
+  /* border: 3px solid black; */
+}
 
+#location a {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+
+#location a:hover {
+  color: #fff !important;
+  text-decoration: none !important;
 }
