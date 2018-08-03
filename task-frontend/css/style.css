@@ -51,7 +51,7 @@ body {
   position: relative;
   margin: auto;
   width: 700px;
-  height: 400px;
+  height: 380px;
   color: #fff;
   font-size: 5em;
   font-weight: 500;
@@ -67,11 +67,11 @@ body {
 #main-content {
   position: absolute;
   margin: auto;
-  top: 80%;
+  top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
-  width: 350px;
+  left: 60%;
+  width: 400px;
   height: 350px;
   box-shadow: 7px 5px 34px 10px rgba(0, 0, 0, 0.4), inset -3px -5px 10px 0.1px #89847e;
   border-radius: 10px;
@@ -80,7 +80,7 @@ body {
   padding-top: 5px;
   overflow: hidden;
   overflow-y: scroll;
-  overflow-y: scroll;
+  overflow-x: scroll;
   /* border: 3px solid black; */
 }
 
@@ -137,7 +137,6 @@ body {
    outline: none;
    border: 3px solid black;
    margin-bottom: 10px;
-   /* background-color: initial; */
 }
 
 #new-list-title:focus {
@@ -151,6 +150,8 @@ body {
 #list-name {
   color: #fff;
   margin-right: 10px;
+  font-weight: 400;
+  font-size: 1.4em;
 }
 
 #create-list-form {
@@ -162,7 +163,7 @@ body {
   text-align: left;
   margin: 0;
   width: 400px;
-  margin-left: 33%;
+  margin-left: 30%;
 }
 
 #check-list {
@@ -186,8 +187,20 @@ body {
   text-decoration: none !important;
 }
 
-
 #location a:hover {
   color: #fff !important;
   text-decoration: none !important;
+}
+
+.quote-style {
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.8em;
+  margin-bottom: 50px;
+  font-family: 'Shadows Into Light', cursive;
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  /* border: 1px solid #fff; */
+  margin: 0 300px;
+  border-radius: 10px;
+  padding: 10px 0;
 }

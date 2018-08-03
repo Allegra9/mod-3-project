@@ -48,7 +48,7 @@ let greeting = document.getElementById("greeting")
 
 function checkDayTime(i){
   if (i < 12 && i >= 5){
-    greeting.innerHTML = "Good morning"
+    greeting.innerHTML = "Good morning, beautiful!"
   } else if (i >= 12  && i < 17){
     greeting.innerHTML = "Good afternoon"
   } else if (i >= 17 && i < 21){
@@ -56,4 +56,26 @@ function checkDayTime(i){
   } else {
     greeting.innerHTML = "Sleep is so important. Why u here?"
   }
+}
+
+// unirest.get("https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous&count=10")
+// .header("X-Mashape-Key", "jF0sjFfaixmshjKHuZUgrI4e8njnp1bqrUIjsnZZiVS9w0rovq")
+// .header("Accept", "application/json")
+// .end(function (result) {
+//   console.log(result.status, result.headers, result.body);
+// });
+
+
+fetch('https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous&count=1', {
+  headers: {"X-Mashape-Key": "jF0sjFfaixmshjKHuZUgrI4e8njnp1bqrUIjsnZZiVS9w0rovq",
+          "Accept": "application/json"}
+})
+  .then(res => res.json())
+  .then(quote => getQuote(quote[0].quote))
+
+function getQuote(quote){
+  let quoteP = document.createElement('p')
+  quoteP.innerText = quote
+  quoteP.className = "text-center quote-style"
+  document.body.append(quoteP)
 }

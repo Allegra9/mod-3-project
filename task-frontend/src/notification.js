@@ -6,8 +6,10 @@ if (navigator.serviceWorker) {
     navigator.serviceWorker.register('sw.js')
 }
 
+
 Notification.requestPermission(function(status) {
 })
+
 
 function displayNotification(item) {
   if (Notification.permission == 'granted') {
@@ -21,6 +23,7 @@ function displayNotification(item) {
     });
   }
 }
+
 
 
 function myTimer(event) {
