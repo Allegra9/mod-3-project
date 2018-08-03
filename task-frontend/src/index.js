@@ -74,6 +74,7 @@ fetch('https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous&count=1'
   .then(quote => getQuote(quote[0].quote))
 
 function getQuote(quote){
+  console.log(quote)
   let quoteP = document.createElement('p')
   quoteP.innerText = quote
   quoteP.className = "text-center quote-style"

@@ -10,7 +10,7 @@ const travelUrl = `https://www.skyscanner.net/transport/flights/lond`
 document.addEventListener('DOMContentLoaded', changeLocation)
 
 function changeLocation() {
-  setInterval(setLocation, 500000000);
+  setInterval(setLocation, 5000);
 }
 
 //when clicked on location, call addPassport func
