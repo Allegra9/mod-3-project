@@ -3,10 +3,10 @@ if (navigator.serviceWorker) {
     navigator.serviceWorker.register('sw.js')
 }
 
-Notification.requestPermission(function(status) {
-    console.log("displayNotification is run")
-    console.log('Notification permission status:', status);
-});
+// Notification.requestPermission(function(status) {
+//     console.log("displayNotification is run")
+//     console.log('Notification permission status:', status);
+// });
 
 function displayNotification(item) {
   console.log("displayNotification is run")
@@ -21,7 +21,7 @@ function displayNotification(item) {
   }
 }
 
-setInterval(notification, 5000);
+setInterval(notification, 500000000);
 
 function notification() {
   console.log("showNotification is run")

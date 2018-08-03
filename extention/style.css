@@ -4,8 +4,25 @@ body {
 }
 
 #main-content {
-  margin: 10px;
-  color: white;
+  width: 400px;
+  height: 350px;
+  box-shadow: 7px 5px 34px 10px rgba(0, 0, 0, 0.4), inset -3px -5px 10px 0.1px #89847e;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 9;
+  padding-top: 5px;
+  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  color: #fff;
+  padding: 20px 30px;
+}
+
+#list-name {
+  color: #fff;
+  margin-right: 10px;
+  font-weight: 400;
+  font-size: 1.2em;
 }
 
 button {
@@ -15,13 +32,32 @@ button {
    cursor: pointer;
    overflow: hidden;
    outline: none;
-   color: white;
+   color: #fff;
 }
 
 #new-list-title {
-  background: none;
-  border: none;
-  border-bottom: 1px solid white;
-  outline:none;
-  color: white;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid #fff !important;
+  padding: 2px 5px;
+  width: 300px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+#new-list-title:active {
+   background: transparent !important;
+   border: none !important;
+   border-bottom: 1px solid #000000 !important;
+   padding: 2px 5px;
+   width: 100px;
+   outline: none;
+   border: 3px solid black;
+   margin-bottom: 10px;
+}
+
+#new-list-title:focus {
+  outline:0 !important;
 }

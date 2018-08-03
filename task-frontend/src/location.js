@@ -9,13 +9,35 @@ const travelUrl = `https://www.skyscanner.net/transport/flights/lond`
 document.addEventListener('DOMContentLoaded', changeLocation)
 
 function changeLocation() {
-  setInterval(setLocation, 5000);
+  setInterval(setLocation, 5000000000);
 }
 
+//when clicked on location, call addPassport func
 function setLocation() {
   let rand = destinations[Math.floor(Math.random() * destinations.length)];
   locationContainer.innerHTML = `<a class="location-name" target="_blank" href=${travelUrl}/${rand[1]}>${rand[0]}</a>`
+  let locationName = document.querySelector('.location-name')
+  locationName.addEventListener('click', addPassport)
   getWeather(rand)
+}
+
+//create a new task "take PASSPORT !!!!"  +
+function addPassport(e){
+  let newListName = document.getElementById('new-list-title').value
+  document.getElementById('all-lists').innerHTML += `
+    <div id="list-${lastId}">
+      <input class="check-list" type="checkbox">
+      <span id="list-name">take PASSPORT !!!!</span>
+      <span id="list-button-container">
+        <button class="edit-list fas fa-edit" style="background:transparent; border:none" title="edit"></button>
+        <button class="delete-list fas fa-times" style="background:transparent; border:none" title="delete"></button>
+      </span>
+    </div>`
+
+    console.log(lastId)
+    document.getElementById('new-list-title').value = ""
+  Adapter.createList({name: "take PASSPORT !!!!", checked: "false"})
+      .then(Adapter.getLists())
 }
 
 function getWeather(location) {
