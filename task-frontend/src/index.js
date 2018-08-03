@@ -19,9 +19,6 @@ function renderGalleryItem(randomNumber){
     })
   }
 
-  console.log(window.innerWidth);
-  console.log(window.innerHeight);
-
   for(let i=0; i < numItemsToGenerate; i++){
     let randomImageIndex = Math.floor(Math.random() * numImagesAvailable);
 

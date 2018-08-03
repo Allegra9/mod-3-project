@@ -94,6 +94,15 @@ body {
   cursor: pointer;
 }
 
+.fa-bell, .fa-bell-slash {
+    background: transparent;
+    border: none;
+    color: lightgrey;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 4px;
+}
+
 #show-all-lists:focus {
   outline: none;
 }

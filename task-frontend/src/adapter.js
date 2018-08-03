@@ -3,7 +3,6 @@ const listUrl = 'http://localhost:3000/api/v1/lists'
 
 class Adapter{
   static getLists() {
-    console.log("GetLists called")
     fetch('http://localhost:3000/api/v1/lists')
     .then(res => res.json())
     .then(data => data.sort((a, b) => a.id - b.id))
@@ -17,7 +16,6 @@ class Adapter{
   }
 
   static editList(id, body) {
-    console.log("EditList Called")
     fetch(`${listUrl}/${id}`,{
       method: 'PATCH',
       body: JSON.stringify(body),

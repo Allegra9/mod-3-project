@@ -28,8 +28,6 @@ lastListId()
           <button class="delete-list fas fa-times" style="background:transparent; border:none" title="delete"></button>
         </span>
       </div>`
-
-      console.log(lastId)
       document.getElementById('new-list-title').value = ""
     Adapter.createList({name: newListName, checked: "false"})
   }
