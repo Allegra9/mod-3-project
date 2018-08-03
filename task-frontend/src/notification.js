@@ -1,18 +1,19 @@
 //adding service worker:
+let note;
+let notificationOn = false
+
 if (navigator.serviceWorker) {
     navigator.serviceWorker.register('sw.js')
 }
 
 Notification.requestPermission(function(status) {
-    console.log("displayNotification is run")
-    console.log('Notification permission status:', status);
-});
+})
 
 function displayNotification(item) {
-  console.log("displayNotification is run")
   if (Notification.permission == 'granted') {
-    navigator.serviceWorker.getRegistration().then(function(reg) {
-      var options = {
+    navigator.serviceWorker.getRegistration().then((reg) => {
+      console.log(reg)
+      const options = {
         body: item.name,
         icon: '/img/5-2-coconut-png-picture.png'
       };
@@ -21,12 +22,29 @@ function displayNotification(item) {
   }
 }
 
-setInterval(notification, 5000);
+
+function myTimer(event) {
+  if (!notificationOn){
+    event.target.className = "fas fa-bell"
+    notificationOn = true
+    note = setInterval(notification, 10000);
+  }
+  else{
+    event.target.className = "fas fa-bell-slash"
+    notificationOn = false
+    console.log(note)
+    clearInterval(note);
+  }
+}
+
 
 function notification() {
-  console.log("showNotification is run")
   fetch('http://localhost:3000/api/v1/lists')
   .then(res => res.json())
-  .then(data => data[Math.floor(Math.random() * destinations.length)])
+  .then(data => data[Math.floor(Math.random() * data.length)])
   .then(item => displayNotification(item))
 }
+
+document.getElementById('push-notification').addEventListener('click', event => {
+    myTimer(event)
+})
