@@ -10,7 +10,7 @@ lastListId()
       toggleList = true
       Adapter.getLists()
     }
-    else{
+    else {
       toggleList = false
       document.getElementById('all-lists').innerHTML = ""
     }

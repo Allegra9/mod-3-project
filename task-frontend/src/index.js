@@ -1,3 +1,4 @@
+//unsplash random background img:
 const numImagesAvailable = 982  //how many photos are total in the collection
 
 const numItemsToGenerate = 1; //how many photos you want to display
@@ -25,7 +26,7 @@ function renderGalleryItem(randomNumber){
     renderGalleryItem(randomImageIndex);
   }
 
-//time
+//time:
 function startTime() {
     let today = new Date();
     let h = today.getHours();
@@ -44,6 +45,7 @@ function checkTime(i) {
     return i;
 }
 
+//greeting:
 let greeting = document.getElementById("greeting")
 
 function checkDayTime(i){
@@ -58,14 +60,7 @@ function checkDayTime(i){
   }
 }
 
-// unirest.get("https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous&count=10")
-// .header("X-Mashape-Key", "jF0sjFfaixmshjKHuZUgrI4e8njnp1bqrUIjsnZZiVS9w0rovq")
-// .header("Accept", "application/json")
-// .end(function (result) {
-//   console.log(result.status, result.headers, result.body);
-// });
-
-
+//random quotes:
 fetch('https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous&count=1', {
   headers: {"X-Mashape-Key": "jF0sjFfaixmshjKHuZUgrI4e8njnp1bqrUIjsnZZiVS9w0rovq",
           "Accept": "application/json"}

@@ -1,6 +1,3 @@
-
-//adding service worker:
-
 let locationContainer = document.getElementById("location")
 
 const destinations = [["Mexico","mx"],["Malaga","mala"], ["Lisbon","lisb"], ["Verona","vero"],

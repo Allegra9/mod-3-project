@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
   Adapter.getLists()
 })
 
-
 document.getElementById("lists").addEventListener("click", function(e) {
 lastListId()
 
@@ -41,7 +40,7 @@ lastListId()
     let listName = e.target.parentNode.parentNode.children[1].innerText
     e.target.parentNode.parentNode.children[1].innerHTML = `
     <form id="edit-list-form">
-      <input required type="text" id="edit-list-name" value=${listName}>
+      <input required type="text" id="edit-list-name" value="${listName}">
       <button type="submit" id="submit-edit" class="fas fa-check"></button>
       <button id="edit-list-cancel" class="fas fa-ban"></button>
     </form>`
@@ -90,9 +89,8 @@ lastListId()
       Adapter.editList(listItemId,{checked: "true"})
     }
   }
-
-
 });
+
 function renderLists(data) {
   document.getElementById('all-lists').innerHTML = ""
   for (let listItem of data) {
