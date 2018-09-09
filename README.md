@@ -5,7 +5,7 @@ Toggle "Bucket list" button to see/hide the list of your editable tasks. Add a n
 
 By refreshing the page you will get a new background picture and a quote.
 
-Click on a beach destination under it's weather to be redirected to Skyscanner, then click on your Crome etx icon to see your todo changed to "packing list" with an extra "take your passport" task in there. 
+Click on a beach destination under it's weather to be redirected to Skyscanner, then click on your Crome Ext icon to see your todo changed to "packing list" with an extra "take your passport" task in there. 
 
 
 Set Up:
