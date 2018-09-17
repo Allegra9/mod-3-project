@@ -1,5 +1,6 @@
 # mod-3-project
-Single Page Application "Moment", Crome Ext, draggable todo list, weather, prompt holiday booker, todo notifications //pair-programmed with @16sheep, Mod3 project demoed in Science Fair 3/8/2018. JS front-end, Rails API backend
+
+Crome Ext "Moment", draggable todo list with notifications turned prompt beach holiday booker. JS front-end, Rails API backend //pair-programmed with @16sheep, Mod3 project demoed in Science Fair 3/8/2018
 
 Toggle "Bucket list" button to see/hide the list of your editable tasks. Add a new task. Delete one. Check off a completed one.
 
