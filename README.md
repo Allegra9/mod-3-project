@@ -15,7 +15,7 @@ BACKEND:
 
 cd task-lister-backend
 
-rake db:create    (we're using  Postgresql as the database)
+rake db:create    (we're using  Postgresql database)
 
 rake db:migrate 
 
