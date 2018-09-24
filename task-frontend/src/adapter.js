@@ -3,7 +3,7 @@ const listUrl = 'http://localhost:3000/api/v1/lists'
 
 class Adapter{
   static getLists() {
-    fetch('http://localhost:3000/api/v1/lists')
+    fetch(listUrl)
     .then(res => res.json())
     .then(data => data.sort((a, b) => a.id - b.id))
     .then(data => renderLists(data))
